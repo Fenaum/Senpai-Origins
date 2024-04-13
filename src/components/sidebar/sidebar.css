@@ -16,7 +16,7 @@
 /* Link styles */
 .side-bar a {
   text-decoration: none; /* Removes the underline from links */
-  color: #333333; /* Dark text color for contrast */
+  color: hsl(var(--primary)); /* Dark text color for contrast */
   font-size: 0.9rem; /* Sets the font size */
   font-weight: 500; /* Sets the font weight to medium */
   padding: 0.5rem 0.5rem; /* Adds padding around the link text */

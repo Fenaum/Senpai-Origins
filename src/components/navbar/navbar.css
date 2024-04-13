@@ -1,10 +1,9 @@
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
     background-color: rgb(255, 255, 255);
-    color: #ededed;
     margin: 0;
 }
 
@@ -18,7 +17,14 @@ ul {
 }
 
 li {
+    color: hsl(var(--primary));
     margin-right: 1rem;
-    color: black;
     text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.active {
+ text-decoration: underline;
+ text-decoration-thickness: 1.5px; /* Adjust the thickness of the underline */
+ text-decoration-skip-ink: none; /* Ensures the underline does not go through the text */
 }

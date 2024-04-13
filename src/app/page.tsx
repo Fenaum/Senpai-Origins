@@ -1,10 +1,9 @@
-import SideBar from "../../components/sidebar/Sidebar";
-
-export default function Home() {
+import Home from "../components/landingHome/Home";
+export default function HomePage() {
+  
   return (
-    <main className="flex items-center justify-between mx-auto">
-      <SideBar />
-      <h1>Hello, world!</h1>
+    <main className="flex items-center justify-center">
+      <Home />
     </main>
   );
 }

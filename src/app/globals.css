@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 255, 253, 208; /* Cream White */
+    --background:  200, 0, 100;/* Cream White */
     --foreground: 0, 0, 0;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -73,4 +73,55 @@
 
 * {
   box-sizing: border-box;
+}
+
+.transition-effect {
+ background-color: rgba(0, 0, 0, 0.1); /* Adjust the color and opacity as needed */
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 9999; /* Ensure it's above other content */
+}
+
+/* Add the animation to .e1 and .e2 directly */
+@keyframes alternateImages {
+  0% {
+    opacity: 1; /* Display both e1 and e2 */
+  }
+  10% {
+    opacity: 0.7; /* Fade e1 and e2 to 70% opacity */
+  }
+  20% {
+    opacity: 0; /* Hide both e1 and e2 */
+  }
+  30% {
+    opacity: 0.7; /* Fade e1 and e2 back to 70% opacity */
+  }
+}
+
+
+.e1, .e2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999; /* Ensure it's above other content */
+  width: 100%;
+  height: 100%;
+  animation-duration: .5s; /* Total duration for both e1 and e2 */
+  animation-iteration-count: infinite;
+}
+
+.e1 {
+  animation-name: alternateImages;
+  animation-delay: 0s; /* Start e1 immediately */
+}
+
+.e2 {
+  animation-name: alternateImages;
+  animation-delay: .1s; /* Start e2 after half of the total duration */
+  opacity: 0; /* Initially hide e2 */
 }

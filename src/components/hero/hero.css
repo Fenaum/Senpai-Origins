@@ -1,0 +1,89 @@
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  height: 80vh;
+  width: 85vw;
+}
+
+.hero-panel-1,
+.hero-panel-3 {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  gap: 10px; /* Adjust the gap between sub-panels */
+  margin: 20px;
+}
+
+.hero-panel-2 {
+  grid-column-start: 2;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  gap: 10px; /* Adjust the gap between sub-panels */
+  margin: 20px 0px;
+}
+
+.hero-panel-1 {
+  grid-column-start: 1;
+}
+
+.hero-panel-3 {
+  grid-column-start: 3;
+}
+
+.hero-panel-1 > .sub-panel-1,
+.hero-panel-1 > .sub-panel-2 {
+  background-color: red;
+  border: 5px solid black;
+}
+
+.hero-panel-3 > .sub-panel-1,
+.hero-panel-3 > .sub-panel-2 {
+  background-color: blue;
+  border: 5px solid black;
+}
+
+.hero-panel-2 > .sub-panel-1,
+.hero-panel-2 > .sub-panel-2 {
+  background-color: yellow;
+  border: 5px solid black;
+}
+
+.hero-panel-2 > .sub-panel-2 {
+  position: relative;
+}
+
+.sub-panel-1,
+.sub-panel-2 {
+  position: relative;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.sub-panel-1:hover,
+.sub-panel-2:hover {
+  transform: scale(1.1); /* Scale the sub-panel by 110% */
+}
+
+.call-to-action {
+  position: absolute;
+  top: -20%; /* Position the top edge of the button at the middle of the parent */
+  left: -15%; /* Position the left edge of the button at the middle of the parent */
+  width: 50%; /* Set the width of the button */
+  height: 50%;
+  background-color: hsl(var(--primary));
+  border: 5px solid black;
+  border-radius: 15px;
+  font-weight: bolder;
+  font-size: 2rem;
+  color: black;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.call-to-action:hover {
+  transform: scale(1.1); /* Scale the button by 110% */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+}
