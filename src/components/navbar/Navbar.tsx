@@ -2,11 +2,11 @@
 
 import "./navbar.css";
 import Icons from "../../../constants";
-import effects from "../../../constants/effect";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useLoadingStore } from "../../utils/zustand";
+import LoadingAnimation from "../animation/LoadingAnimation"
 
 const Navbar = () => {
   const router = useRouter();
@@ -27,46 +27,49 @@ const Navbar = () => {
   return (
     <>
       {isLoading && (
-        <div className={transitionClassName} style={{ position: "relative" }}>
-          <Image src={effects.speed1} alt="Loading..." className="e1"></Image>
-          <Image src={effects.speed2} alt="Loading..." className="e2"></Image>
-        </div>
+        <LoadingAnimation transitionClassName={transitionClassName} />
       )}
       <nav>
         <Image src={Icons.logo} alt="Logo" className="h-40 w-40 mx-5" />
         <ul>
           <li>
-              <button
-                onClick={(event) => transitionAnimation("/store")}
-                className={isActive("/store") ? "active" : ""}
-              >
-                SHOP
-              </button>
+            <button
+              onClick={(event) => transitionAnimation("/store")}
+              className={isActive("/store") ? "active" : ""}
+            >
+              SHOP
+            </button>
           </li>
           <li className={isActive("/") ? "active" : ""}>
-              <button
-                onClick={(event) => transitionAnimation("/")}
-                className={isActive("/") ? "active" : ""}
-              >
-                HOME
-              </button>
+            <button
+              onClick={(event) => transitionAnimation("/")}
+              className={isActive("/") ? "active" : ""}
+            >
+              HOME
+            </button>
           </li>
-          <li className={isActive("/about") ? "active" : ""}>
-              <button onClick={(event) => transitionAnimation("/about")}>
-                ABOUT US
-              </button>
+          <li>
+            <button
+              onClick={(event) => transitionAnimation("/about")}
+              className={isActive("/about") ? "active" : ""}
+            >
+              ABOUT US
+            </button>
           </li>
           <li className={isActive("/blog") ? "active" : ""}>
-              <button onClick={(event) => transitionAnimation("/blog")}>
-                BLOG
-              </button>
+            <button
+              onClick={(event) => transitionAnimation("/blog")}
+              className={isActive("/blog") ? "active" : ""}
+            >
+              BLOG
+            </button>
           </li>
-          <li className={isActive("/notifications") ? "active" : ""}>
+          <li>
             <Link href="/notifications">
               <Icons.bellIcon className="h-9 w-9" />
             </Link>
           </li>
-          <li className={isActive("/user/signin") ? "active" : ""}>
+          <li>
             <Link href="/user/signin">
               <Icons.userIcon className="h-10 w-10" />
             </Link>
