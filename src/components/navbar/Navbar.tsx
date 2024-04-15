@@ -11,30 +11,20 @@ import LoadingAnimation from "../animation/LoadingAnimation"
 const Navbar = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const { isLoading, startLoading, stopLoading } = useLoadingStore();
+  const { isLoading, transitionAnimation } = useLoadingStore();
 
- const transitionAnimation = (href: string) => {
-   startLoading();
-   setTimeout(() => {
-     stopLoading();
-     router.push(href); // Navigate to the desired path after loading is complete
-   }, 500);
- };
 
   const isActive = (href: string) => pathname === href;
-  const transitionClassName = isLoading ? "transition-effect" : "";
 
   return (
     <>
-      {isLoading && (
-        <LoadingAnimation transitionClassName={transitionClassName} />
-      )}
+        <LoadingAnimation isLoading={isLoading}/>
       <nav>
         <Image src={Icons.logo} alt="Logo" className="h-40 w-40 mx-5" />
         <ul>
           <li>
             <button
-              onClick={(event) => transitionAnimation("/store")}
+              onClick={(event) => transitionAnimation(router, "/store")}
               className={isActive("/store") ? "active" : ""}
             >
               SHOP
@@ -42,7 +32,7 @@ const Navbar = () => {
           </li>
           <li className={isActive("/") ? "active" : ""}>
             <button
-              onClick={(event) => transitionAnimation("/")}
+              onClick={(event) => transitionAnimation(router, "/")}
               className={isActive("/") ? "active" : ""}
             >
               HOME
@@ -50,7 +40,7 @@ const Navbar = () => {
           </li>
           <li>
             <button
-              onClick={(event) => transitionAnimation("/about")}
+              onClick={(event) => transitionAnimation(router,"/about")}
               className={isActive("/about") ? "active" : ""}
             >
               ABOUT US
@@ -58,7 +48,7 @@ const Navbar = () => {
           </li>
           <li className={isActive("/blog") ? "active" : ""}>
             <button
-              onClick={(event) => transitionAnimation("/blog")}
+              onClick={(event) => transitionAnimation(router, "/blog")}
               className={isActive("/blog") ? "active" : ""}
             >
               BLOG

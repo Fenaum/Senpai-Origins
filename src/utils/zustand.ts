@@ -1,17 +1,21 @@
 import { create } from "zustand";
 
 interface LoadingState {
-  isLoading: boolean;
+ isLoading: boolean;
+ startLoading: () => void;
+ stopLoading: () => void;
+ transitionAnimation: (router: any, href: string) => void; // Adjust the type as needed
 }
 
-// Define a type for the store API
-type LoadingStore = LoadingState & {
-  startLoading: () => void;
-  stopLoading: () => void;
-};
-
-export const useLoadingStore = create<LoadingStore>((set) => ({
-  isLoading: false,
-  startLoading: () => set({ isLoading: true }),
-  stopLoading: () => set({ isLoading: false }),
+export const useLoadingStore = create<LoadingState>((set, get) => ({
+ isLoading: false,
+ startLoading: () => set({ isLoading: true }),
+ stopLoading: () => set({ isLoading: false }),
+ transitionAnimation: (router, href) => {
+    set({ isLoading: true });
+    setTimeout(() => {
+      set({ isLoading: false });
+      router.push(href);
+    }, 500); // Adjust the duration as needed
+ },
 }));

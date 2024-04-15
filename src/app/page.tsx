@@ -1,9 +1,17 @@
+"use client";
+import { motion as m } from "framer-motion";
+
 import Home from "../components/landingHome/Home";
 export default function HomePage() {
-  
   return (
-    <main className="flex items-center justify-center">
+    <m.main
+      className="flex items-center justify-center"
+      initial={{ x: "100%" }}
+      animate={{ x: "0%" }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
+      exit={{ opacity: 1 }}
+    >
       <Home />
-    </main>
+    </m.main>
   );
 }
