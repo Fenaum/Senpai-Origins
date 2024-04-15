@@ -31,19 +31,16 @@
 
 .hero-panel-1 > .sub-panel-1,
 .hero-panel-1 > .sub-panel-2 {
-  background-color: red;
   border: 5px solid black;
 }
 
 .hero-panel-3 > .sub-panel-1,
 .hero-panel-3 > .sub-panel-2 {
-  background-color: blue;
   border: 5px solid black;
 }
 
 .hero-panel-2 > .sub-panel-1,
 .hero-panel-2 > .sub-panel-2 {
-  background-color: yellow;
   border: 5px solid black;
 }
 

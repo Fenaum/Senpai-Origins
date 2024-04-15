@@ -6,11 +6,8 @@ export default function SideBar() {
   return (
     <div>
       <div className="side-bar">
-        <h1 className="text-center text-2xl font-light text-gray-800">
-          Main Menu
-        </h1>{" "}
         <form className="search-form">
-          <input type="text" placeholder="Search..." className="search-input" />
+          <input type="text" placeholder="Search..." className="search-input font-light text-sm" />
         </form>
         <div className="dropdown">
           <Link href="/store" className="flex items-center">
@@ -28,7 +25,13 @@ export default function SideBar() {
             <Icons.ordersIcon className="w-12 h-8" />
             <span>My Orders</span>
           </Link>
-          <div className="dropdown-content">
+          <div 
+          className="dropdown-content" 
+          onMouseLeave={(e) => {
+            e.stopPropagation();
+            
+          }}
+          >
             <Link href="/orders/status" className="flex items-center">
               <Icons.orderStatus className="w-12 h-8" />
               <span>Order Status</span>

@@ -21,9 +21,6 @@ export default function Hero() {
         </div>
         <div className="sub-panel-2">
           <Image alt="panel 2" src={testImages.testimage3} className="hero-image"></Image>
-          <button className="call-to-action">
-            <Link href="/store">SHOP HERE!!!!</Link>
-          </button>
         </div>
       </div>
       <div className="hero-panel-3">
