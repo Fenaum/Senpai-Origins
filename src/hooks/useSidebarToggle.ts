@@ -15,7 +15,7 @@ const useSidebarToggle = (sidebarMenuBtnId: string, sidebarId: string) => {
         // Move the sidebar-menu-btn 5rem to the right and flip its image
         sidebarMenuBtn.style.transform = "translateX(145px) scaleX(-1)";
         sidebarMenuBtn.style.transition =
-          "cubic-bezier(0.0, 0.0, 0.2, 1), transform 0.5s cubic-bezier(0.0, 0.0, 0.2, 1)";
+          "0.5s cubic-bezier(0.0, 0.0, 0.2, 1), transform 0.5s cubic-bezier(0.0, 0.0, 0.2, 1)";
 
         sidebar.style.transform = "translateX(0)"; // Show the sidebar by moving it to its original position
         sidebar.style.visibility = "visible";
@@ -26,13 +26,12 @@ const useSidebarToggle = (sidebarMenuBtnId: string, sidebarId: string) => {
         // Reset the sidebar-menu-btn position and flip its image
         sidebarMenuBtn.style.transform = "translateX(0) scaleX(1)";
         sidebarMenuBtn.style.transition =
-          "cubic-bezier(0.0, 0.0, 0.2, 1), transform 0.5s cubic-bezier(0.0, 0.0, 0.2, 1)";
+          "0.5s cubic-bezier(0.0, 0.0, 0.2, 1), transform 0.5s cubic-bezier(0.0, 0.0, 0.2, 1);";
 
         sidebar.style.transform = "translateX(-100%)"; // Hide the sidebar by moving it off-screen to the left
-        sidebar.style.visibility = "hidden";
+        // sidebar.style.visibility = "hidden";
         sidebar.style.opacity = "0";
-        sidebar.style.transition =
-          "0.5s cubic-bezier(0.0, 0.0, 0.2, 1), transform 0.5s cubic-bezier(0.0, 0.0, 0.2, 1);";
+        sidebar.style.transition = "0.5s cubic-bezier(0.0, 0.0, 0.2, 1), transform 0.5s cubic-bezier(0.0, 0.0, 0.2, 1);";
       };
 
       sidebarMenuBtn.addEventListener("mouseenter", showSidebar);
