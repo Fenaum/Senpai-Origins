@@ -16,6 +16,6 @@ export const useLoadingStore = create<LoadingState>((set, get) => ({
     setTimeout(() => {
       set({ isLoading: false });
       router.push(href);
-    }, 500); // Adjust the duration as needed
+    }, 230); // Adjust the duration as needed
  },
 }));

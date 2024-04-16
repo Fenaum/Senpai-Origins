@@ -11,7 +11,7 @@ function page() {
     {...animationProps.storePage}
     className="flex"
     >
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Home />
     </m.div>
   );
