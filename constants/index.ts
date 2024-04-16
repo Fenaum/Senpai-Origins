@@ -1,4 +1,4 @@
-import logo from "../public/logos/senpailogoround.png"
+import logo from "../public/logos/senpai-logo.png"
 import userIcon from "../public//icons/user-rounded-svgrepo-com.svg"
 import bellIcon from "../public/icons/bell-svgrepo-com.svg"
 import cartIcon from "../public/icons/cart-large-2-svgrepo-com.svg"
@@ -10,6 +10,10 @@ import supportIcon from "../public/icons/book-bookmark-svgrepo-com.svg"
 import shippingIcon from "../public/icons/delivery-svgrepo-com.svg"
 import searchIcon from "../public/icons/magnifer-svgrepo-com.svg"
 import orderStatus from "../public/icons/box-minimalistic-svgrepo-com.svg"
+import shopIcon from "../public/icons/bag-svgrepo-com.svg"
+import menuIcon from "../public/icons/hamburger-menu-svgrepo-com.svg"
+import promotionShopIcon from "../public/icons/bag-heart-svgrepo-com.svg"
+import sideBarMenu from "../public/icons/menu-alt-1-svgrepo-com.svg"
 
 export default {
   logo,
@@ -24,4 +28,8 @@ export default {
   shippingIcon,
   searchIcon,
   orderStatus,
+  shopIcon,
+  promotionShopIcon,
+  menuIcon,
+  sideBarMenu
 };

@@ -1,10 +1,14 @@
-import SideBar from "../../components/sidebar/Sidebar";
+"use client";
+import { m, animationProps } from "../utils/animation"
 
-export default function Home() {
+import Home from "../components/landingHome/Home";
+export default function HomePage() {
   return (
-    <main className="flex items-center justify-between mx-auto">
-      <SideBar />
-      <h1>Hello, world!</h1>
-    </main>
+    <m.main
+      className="flex items-center justify-center"
+      {...animationProps.homePage}
+    >
+      <Home />
+    </m.main>
   );
 }

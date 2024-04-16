@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 255, 253, 208; /* Cream White */
+    --background:  200, 0, 100;/* Cream White */
     --foreground: 0, 0, 0;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -73,4 +73,6 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
+
