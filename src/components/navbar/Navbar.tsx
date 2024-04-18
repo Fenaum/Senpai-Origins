@@ -73,6 +73,7 @@ const Navbar = () => {
               </li>
             </ul>
           </nav>
+          <hr className="nav-break"/>
         </>
       )}
     </>

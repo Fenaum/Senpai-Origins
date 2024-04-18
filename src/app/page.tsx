@@ -5,7 +5,7 @@ import Home from "../components/landingHome/Home";
 export default function HomePage() {
   return (
     <m.main
-      className="flex items-center justify-center"
+      className="flex flex-col items-center justify-center"
       {...animationProps.homePage}
     >
       <Home />

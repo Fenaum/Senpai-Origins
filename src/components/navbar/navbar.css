@@ -1,29 +1,46 @@
 nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 li {
-    color: hsl(var(--primary));
-    margin-right: 1rem;
-    text-decoration: none;
-    font-size: 1.1rem;
+  color: hsl(var(--primary));
+  margin-right: 1rem;
+  text-decoration: none;
+  font-size: 1.1rem;
 }
 
 .active {
- text-decoration: underline;
- text-decoration-thickness: 1.5px; /* Adjust the thickness of the underline */
- text-decoration-skip-ink: none; /* Ensures the underline does not go through the text */
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px; /* Adjust the thickness of the underline */
+  text-decoration-skip-ink: none; /* Ensures the underline does not go through the text */
+}
+
+.nav-break {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(153, 153, 255, 0.255),
+    rgba(255, 153, 238, 0.226),
+    rgba(153, 153, 255, 0.255)
+  );
+  margin-top: 0;
 }

@@ -1,0 +1,29 @@
+.cartButton-container {
+    background-image: linear-gradient(
+        to right,
+        rgba(121, 121, 205, 0.855),
+        rgba(211, 119, 196, 0.855),
+        rgba(121, 121, 205, 0.855)
+    );
+    height: 90%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    overflow: hidden; /* Ensures the pseudo-element is clipped to the container */
+}
+
+.cartButton-container:hover {
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), /* Glow effect layer */
+        linear-gradient(
+            to right,
+            rgba(153, 153, 255, 0.855),
+            rgba(255, 153, 238, 0.855),
+            rgba(153, 153, 255, 0.8555)
+        ); /* Original background layer */
+    background-blend-mode: lighten; /* Blend mode to combine layers */
+}

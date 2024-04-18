@@ -24,6 +24,8 @@ interface Product {
   createdAt?: Date; // Timestamp when the product was created
   updatedAt?: Date; // Timestamp when the product was last updated
   variants?: Variant[]; // Array of product variants
+  promotion?: boolean;
+  collection?: "new arrivals" | "best sellers" | "clearance" | "featured"
   // Other product properties...
 }
 
