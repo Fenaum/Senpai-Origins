@@ -14,6 +14,7 @@ import shopIcon from "../public/icons/bag-svgrepo-com.svg"
 import menuIcon from "../public/icons/hamburger-menu-svgrepo-com.svg"
 import promotionShopIcon from "../public/icons/bag-heart-svgrepo-com.svg"
 import sideBarMenu from "../public/icons/menu-alt-1-svgrepo-com.svg"
+import addToCart from "../public/icons/cart-plus-svgrepo-com.svg"
 
 export default {
   logo,
@@ -31,5 +32,6 @@ export default {
   shopIcon,
   promotionShopIcon,
   menuIcon,
-  sideBarMenu
+  sideBarMenu,
+  addToCart
 };

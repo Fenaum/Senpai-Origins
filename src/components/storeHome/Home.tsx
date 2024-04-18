@@ -1,51 +1,52 @@
+'use client'
+
+import React, { useEffect, useState } from 'react';
 import Product from "../../../model/Product";
+import Card from "../../components/ui/productCard/Card";
+import StoreHero from "../storeHero/StoreHero"
+import "./home.css"
 
-// // src/components/storeHome/Home.tsx
-// async function getProducts() {
-//   const response = await fetch("http://localhost:3000/api/products/get", {
-//     method: "GET",
-//   });
-//   const products = await response.json();
-
-//   return products;
-// }
+async function getProducts() {
+ const response = await fetch("http://localhost:3000/api/products/read", {
+    method: "GET",
+ });
+ const products = await response.json();
+ return products;
+}
 
 const Home = () => {
-  // const products = getProducts().then((data) => {
-  //   return data;
-  // });
+ const [products, setProducts] = useState<Product[]>([]);
 
-  // console.log(products);
+ useEffect(() => {
+    const fetchProducts = async () => {
+      const fetchedProducts = await getProducts();
+      setProducts(fetchedProducts);
+    };
 
-  return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-4">
-        Welcome to Senpai Origins Store
-      </h1>
-      <p className="text-xl">Discover the best products for your needs.</p>
+    fetchProducts();
+ }, []); // Empty dependency array ensures this effect runs once on component mount
 
-      <div className="grid grid-cols-3 gap-4 my-10">
-        {/* Example product cards */}
-        <div className="border border-gray-300 p-4">
-          <img src="" alt="Product 1" className="w-full h-48 object-cover" />
-          <h2 className="text-xl font-bold mt-2">Product 1</h2>
-          <p className="text-gray-600">$99.99</p>
-        </div>
-        <div className="border border-gray-300 p-4">
-          <img src="" alt="Product 2" className="w-full h-48 object-cover" />
-          <h2 className="text-xl font-bold mt-2">Product 2</h2>
-          <p className="text-gray-600">$199.99</p>
-        </div>
-        <div className="border border-gray-300 p-4">
-          <img src="" alt="Product 3" className="w-full h-48 object-cover" />
-          <h2 className="text-xl font-bold mt-2">Product 3</h2>
-          <p className="text-gray-600">$299.99</p>
-        </div>
-      </div>
-
-      {/* Add more sections as needed */}
-    </div>
-  );
+ return (
+   <div className="container mx-auto p-4 flex flex-col justify-center items-center">
+     <h1 className="text-2xl font-light mb-2">Welcome Anime Fans!</h1>
+     <p className="text-1xl">See latest Collections</p>
+      <StoreHero />
+     <div className="collection flex-col items-center text-center">
+       <h1 className="text-2xl font-light m-4"> New Arrivals </h1>
+       <div className="new-arrivals">
+         {products.map((product: Product) => (
+           <Card
+             key={product.productID}
+             title={product.name}
+             price={product.price}
+             image={product.images[0]}
+             id={product.productID}
+           />
+         ))}
+       </div>
+     </div>
+   </div>
+ );
 };
 
 export default Home;

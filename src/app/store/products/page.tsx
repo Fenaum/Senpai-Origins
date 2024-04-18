@@ -1,31 +1,36 @@
-import React from 'react'
-import Product from "../../../../model/Product"
+import React from "react";
+import Product from "../../../../model/Product";
+import Card from "../../../components/ui/productCard/Card";
 
 async function getProducts() {
- const response = await fetch("http://localhost:3000/api/products/get", {
-   method: "GET",
- });
-    return response.json()
+  const response = await fetch("http://localhost:3000/api/products/read", {
+    method: "GET",
+  });
+  return response.json();
 }
 
-
-function page() {
-    const products = getProducts().then((products) => {
-        return (
-            <div>
-                {products.map((product: Product) => {
-                    return (
-                        <div key={product.productID}>
-                            <h1>{product.name}</h1>
-                            <p>{product.description}</p>
-                            <p>{product.price}</p>
-                        </div>
-                    )
-                })}
-            </div>
-        )
-    })
-    return products;
+async function page() {
+  const products = getProducts().then((products) => {
+    console.log(products)
+    return (
+      <div className="flex justify-center items-center mx-12">
+        <div className="flex justify-start items-center flex-wrap gap-6">
+          {products.map((product: Product) => {
+            return (
+              <Card
+                key={product.productID}
+                title={product.name}
+                price={product.price}
+                image={product.images[0]}
+                id={product.productID}
+              />
+            );
+          })}
+        </div>
+      </div>
+    );
+  });
+  return products;
 }
 
-export default page
+export default page;

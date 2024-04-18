@@ -1,0 +1,19 @@
+.StoreHero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  height: 45vh;
+  width: 75vw;
+  gap: 1.5rem;
+}
+
+.StoreHero-panel {
+  position: relative;
+  border: 5px solid black;
+}
+
+.StoreHero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+}
