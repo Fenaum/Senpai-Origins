@@ -1,20 +1,23 @@
-// hooks/useViewport.ts
+// useViewport.ts
 import { useState, useEffect } from "react";
 
 export const useViewport = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      const isMobileView =
-        window.innerWidth <= 450 && window.innerHeight <= 950;
-      setIsMobile(isMobileView);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
     };
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    return () => window.removeEventListener("resize", checkMobile);
+    // Check if window is defined (browser environment)
+    if (typeof window !== "undefined") {
+      // Initial check
+      handleResize();
+      // Add event listener for window resize
+      window.addEventListener("resize", handleResize);
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
   return isMobile;

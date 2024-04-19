@@ -5,9 +5,10 @@ import Product from "../../../model/Product";
 import Card from "../../components/ui/productCard/Card";
 import StoreHero from "../storeHero/StoreHero"
 import "./home.css"
+import { useViewport } from '@/hooks/useViewport';
 
 async function getProducts() {
- const response = await fetch("http://localhost:3000/api/products/read", {
+ const response = await fetch("http://localhost:3000/api/products/get", {
     method: "GET",
  });
  const products = await response.json();
@@ -16,6 +17,7 @@ async function getProducts() {
 
 const Home = () => {
  const [products, setProducts] = useState<Product[]>([]);
+ const isMobile = useViewport();
 
  useEffect(() => {
     const fetchProducts = async () => {
@@ -27,12 +29,27 @@ const Home = () => {
  }, []); // Empty dependency array ensures this effect runs once on component mount
 
  return (
-   <div className="container mx-auto p-4 flex flex-col justify-center items-center">
-     <h1 className="text-2xl font-light mb-2">Welcome Anime Fans!</h1>
-     <p className="text-1xl">See latest Collections</p>
-      <StoreHero />
+   <div className="container mx-auto flex flex-col justify-center items-center">
+    { !isMobile && (
+      <div className='heroContainer'>
+      <h1 className="text-2xl font-normal my-2">Welcome Anime Fans!</h1>
+        <StoreHero />
+      </div>     
+    )}
      <div className="collection flex-col items-center text-center">
        <h1 className="text-2xl font-light m-4"> New Arrivals </h1>
+       <div className="new-arrivals">
+         {products.map((product: Product) => (
+           <Card
+             key={product.productID}
+             title={product.name}
+             price={product.price}
+             image={product.images[0]}
+             id={product.productID}
+           />
+         ))}
+       </div>
+       <h1 className="text-2xl font-light m-4"> Special Offers </h1>
        <div className="new-arrivals">
          {products.map((product: Product) => (
            <Card

@@ -5,6 +5,7 @@ import Icons from "../../../constants";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useLoadingStore } from "../../utils/zustand";
 import LoadingAnimation from "../animation/LoadingAnimation";
 import MobileNavbar from "./MobileNavbar";
@@ -15,8 +16,21 @@ const Navbar = () => {
   const router = useRouter();
   const pathname = usePathname();
   const { isLoading, transitionAnimation } = useLoadingStore();
-  const isMobile = useViewport(); // Use the useViewport hook
   const isActive = (href: string) => pathname === href;
+  const isMobile = useViewport(); // Use the useViewport hook
+
+  // State to track whether the component is mounted on the client-side
+  const [isClient, setIsClient] = useState(false);
+
+  // Effect to set isClient to true when the component mounts on the client-side
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // If the component is not mounted on the client-side, return null
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <>
@@ -73,7 +87,7 @@ const Navbar = () => {
               </li>
             </ul>
           </nav>
-          <hr className="nav-break"/>
+          <hr className="nav-break" />
         </>
       )}
     </>
