@@ -31,3 +31,21 @@
 .product-link :hover {
   cursor: pointer;
 }
+
+/* Responsive styles for devices with a max-width of 450px and max-height of 950px */
+@media (max-width: 450px) and (max-height: 950px) {
+ .product-card-container {
+    width: 12rem; /* Make the card take full width */
+    height: 18rem; /* Adjust the height automatically */
+    margin: 0.5rem; /* Adjust the margin for smaller screens */
+ }
+
+ .product-title {
+    font-size: .8rem; /* Adjust the font size for smaller screens */
+    line-height: .8rem;
+ }
+
+ .product-price {
+    font-size: 0.75rem; /* Adjust the font size for smaller screens */
+ }
+}

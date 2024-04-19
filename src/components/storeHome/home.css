@@ -4,3 +4,18 @@
   max-width: 100%;
   width: 90vw;
 }
+
+.heroContainer {
+  background-image: linear-gradient(
+        to right,
+        rgba(121, 121, 205, 0.855),
+        rgba(211, 119, 196, 0.855),
+        rgba(121, 121, 205, 0.855)
+    );
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100%;;
+  flex-direction: column;
+  padding: 1cqmax;
+}
