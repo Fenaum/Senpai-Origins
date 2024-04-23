@@ -5,11 +5,16 @@ import Icons from "../../../constants";
 import "./sidebar.css";
 import useSidebarToggle from "@/hooks/useSidebarToggle";
 
-export default function SideBar() {
+interface Props {
+  className?: string;
+}
+
+
+export default function SideBar({className}: Props) {
  useSidebarToggle("sidebar-menu-btn", "side-bar");
 
   return (
-    <>
+    <div className={className}>
       <button id="sidebar-menu-btn" className="sidebar-menu-btn">
         <Icons.sideBarMenu className="h-14 w-14" />
       </button>
@@ -73,6 +78,6 @@ export default function SideBar() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }

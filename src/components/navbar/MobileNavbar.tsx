@@ -5,9 +5,14 @@ import Image from "next/image";
 import Icons from "../../../constants";
 import './navbar.css'
 
-const MobileNavbar = () => {
+
+interface Props {
+  className?: string;
+}
+
+const MobileNavbar = ({className}: Props) => {
     return (
-      <nav className="flex justify-between">
+      <nav className={`flex justify-between ${className}`}>
         <button>
             <Icons.menuIcon className="w-12 h-12 m-5"/>
         </button>
