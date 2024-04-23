@@ -7,6 +7,7 @@ interface LoadingState {
  transitionAnimation: (router: any, href: string) => void; // Adjust the type as needed
 }
 
+
 export const useLoadingStore = create<LoadingState>((set, get) => ({
  isLoading: false,
  startLoading: () => set({ isLoading: true }),

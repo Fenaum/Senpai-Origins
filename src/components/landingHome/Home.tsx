@@ -1,4 +1,5 @@
-import Hero from "../hero/hero"
+'use client'
+import Hero from "../hero/hero";
 
 export default function Home() {
 
@@ -6,5 +7,5 @@ export default function Home() {
     <div className="home">
       <Hero />
     </div>
-  )
+  );
 }
