@@ -28,10 +28,12 @@ const Home = () => {
 
  return (
    <div className="container mx-auto flex flex-col justify-center items-center">
-      <div className='heroContainer'>
-      <h1 className="text-2xl font-normal my-2">Welcome Anime Fans!</h1>
+     <div className="hidden lg:block">
+       <div className="heroContainer">
+        <h1 className="text-2xl font-normal my-2">Welcome Anime Fans!</h1>
         <StoreHero />
-      </div>     
+       </div>
+     </div>
      <div className="collection flex-col items-center text-center">
        <h1 className="text-2xl font-light m-4"> New Arrivals </h1>
        <div className="new-arrivals">

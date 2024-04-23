@@ -4,19 +4,82 @@ import Link from "next/link"
 import Image from "next/image";
 import Icons from "../../../constants";
 import './navbar.css'
-
+import { useState } from "react";
 
 interface Props {
   className?: string;
 }
 
 const MobileNavbar = ({className}: Props) => {
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+   const handleClick = () => {
+     setIsMenuOpen(!isMenuOpen);
+   };
+
     return (
       <nav className={`flex justify-between ${className}`}>
-        <button>
-            <Icons.menuIcon className="w-12 h-12 m-5"/>
-        </button>
-        <Image src={Icons.logo} alt="Logo" className="h-20 w-20 mx-5" />
+        <div>
+          <button
+            onClick={handleClick}
+            className={`NavMenu-button ${isMenuOpen ? "rotate" : ""}`}
+          >
+            <Icons.menuIcon className="w-12 h-12 m-5" />
+          </button>
+          <ul className={`NavMenu-items first-item ${isMenuOpen ? "show" : ""}`}>
+            <div className="menu-break"/>
+            <li>
+              <Link onClick={handleClick} href="/cart">
+                NEW COLLECTION
+              </Link>
+            </li>
+            <li>
+              <Link onClick={handleClick} href="/service">
+                SPECIAL OFFERS
+              </Link>
+            </li>
+            <li>
+              <Link onClick={handleClick} href="/about">
+                ORDER STATUS
+              </Link>
+            </li>
+            <li>
+              <Link onClick={handleClick} href="/about">
+                TRACK SHIPPING
+              </Link>
+            </li>
+            <hr className="menu-line-break"/>
+            <li>
+              <Link onClick={handleClick} href="/about">
+                ABOUT US
+              </Link>
+            </li>
+            <li>
+              <Link onClick={handleClick} href="/about">
+                SUPPORT
+              </Link>
+            </li>
+            <li>
+              <Link onClick={handleClick} href="/about">
+                CONTACT US
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <Link href="/">
+          <Image src={Icons.logo} alt="Logo" className="h-24 w-24" />
+        </Link>
+        <div className="flex ">
+          <Link href="/store">
+            <Icons.storeIcon className="w-10 h-10 m-1" />
+          </Link>
+          <Link href="/cart">
+            <Icons.cartIcon className="w-11 h-11 m-1" />
+          </Link>
+          <Link href="profile">
+            <Icons.userMobileIcon className="w-10 h-10 m-1" />
+          </Link>
+        </div>
       </nav>
     );
 }
