@@ -44,3 +44,71 @@ li {
   );
   margin-top: 0;
 }
+
+.NavMenu-items {
+  will-change: transform, opacity;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: visibility 0s 0.5s, opacity 0.5s cubic-bezier(0, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0, 0, 0.2, 1);
+  justify-content: start;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden; /* Hides the overflow of content inside the menu */
+  background-color: white;
+  font-weight: 200;
+  list-style: none;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+.NavMenu-items.show {
+  will-change: transform, opacity;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: visibility 0s, opacity 0.5s cubic-bezier(0, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.menu-break {
+  background: transparent;
+  margin-bottom: 5rem;
+}
+
+.NavMenu-items > li {
+  width: 100%;
+  text-align: center;
+  color: hsla(var(--primary));
+  font-weight: 200;
+  font-size: 1.9rem;
+  list-style: none;
+  margin: 1rem;
+}
+
+.menu-line-break {
+  width: 100%;
+  margin: 0.5rem;
+}
+
+.NavMenu-button {
+  background-color: transparent;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 0.5rem;
+  left: 0;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.NavMenu-button.rotate {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in-out;
+}
