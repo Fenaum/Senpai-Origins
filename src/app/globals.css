@@ -76,3 +76,9 @@
   margin: 0;
 }
 
+.x-container {
+  display: flex;
+  overflow-x: auto;
+  max-width: 100%;
+  width: 90vw;
+}

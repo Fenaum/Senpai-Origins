@@ -101,7 +101,7 @@ li {
   background-color: transparent;
   border: none;
   transition: transform 0.3s ease-in-out;
-  position: fixed;
+  position: absolute;
   top: 0.5rem;
   left: 0;
   z-index: 1000;

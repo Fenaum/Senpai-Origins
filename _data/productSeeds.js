@@ -1,5 +1,5 @@
 const admin = require("firebase-admin");
-const serviceAccount = require("./senpai-origins-firebase-adminsdk-j9ucm-fa3116a74a.json");
+const serviceAccount = require("./senpai-origins-firebase-adminsdk-j9ucm-480ede61f1.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -101,7 +101,7 @@ async function seedProducts() {
       name: "Gear 6 Luffy Crew Neck",
       description: "This is a description for Product 6.",
       price: 49.99,
-      collection: "new arrivals",
+      collection: "special offers",
 
       quantity: 5,
       images: ["/images/products/luffygear6.webp"],
@@ -112,7 +112,7 @@ async function seedProducts() {
       name: "Zoro Hoodie",
       description: "This is a description for Product 7.",
       price: 49.99,
-      collection: "new arrivals",
+      collection: "special offers",
 
       images: ["/images/products/zoro.webp"],
       categoryID: "cat_1",
@@ -122,7 +122,7 @@ async function seedProducts() {
       name: "Chainsaw Man Crew Neck",
       description: "This is a description for Product 8.",
       price: 39.99,
-      collection: "new arrivals",
+      collection: "special offers",
 
       quantity: 25,
       images: ["/images/products/chainsawman.webp"],
@@ -133,7 +133,7 @@ async function seedProducts() {
       name: "Fairy Eevee Crew Neck",
       description: "This is a description for Product 9.",
       price: 39.99,
-      collection: "new arrivals",
+      collection: "special offers",
       quantity: 35,
       images: ["/images/products/eevee.webp"],
       categoryID: "cat_1",
@@ -143,7 +143,7 @@ async function seedProducts() {
       name: "Demon Slayer Crew Neck",
       description: "This is a description for Product 10.",
       price: 49.99,
-      collection: "new arrivals",
+      collection: "special offers",
       quantity: 35,
       images: ["/images/products/demonslayer.webp"],
       categoryID: "cat_1",

@@ -30,13 +30,13 @@ const Home = () => {
    <div className="container mx-auto flex flex-col justify-center items-center">
      <div className="hidden lg:block">
        <div className="heroContainer">
-        <h1 className="text-2xl font-normal my-2">Welcome Anime Fans!</h1>
-        <StoreHero />
+         <h1 className="text-2xl font-normal my-2">Welcome Anime Fans!</h1>
+         <StoreHero />
        </div>
      </div>
-     <div className="collection flex-col items-center text-center">
+     <div className="flex-col items-center text-center">
        <h1 className="text-2xl font-light m-4"> New Arrivals </h1>
-       <div className="new-arrivals">
+       <div className="x-container">
          {products.map((product: Product) => (
            <Card
              key={product.productID}
@@ -48,7 +48,7 @@ const Home = () => {
          ))}
        </div>
        <h1 className="text-2xl font-light m-4"> Special Offers </h1>
-       <div className="new-arrivals">
+       <div className="x-container">
          {products.map((product: Product) => (
            <Card
              key={product.productID}
