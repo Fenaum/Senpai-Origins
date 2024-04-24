@@ -29,22 +29,27 @@ const MobileNavbar = ({className}: Props) => {
           <ul className={`NavMenu-items first-item ${isMenuOpen ? "show" : ""}`}>
             <div className="menu-break"/>
             <li>
-              <Link onClick={handleClick} href="/cart">
+              <Link onClick={handleClick} href="/store/products">
+                ALL PRODUCTS
+              </Link>
+            </li>
+            <li>
+              <Link onClick={handleClick} href="/store/products/new-arrivals">
                 NEW COLLECTION
               </Link>
             </li>
             <li>
-              <Link onClick={handleClick} href="/service">
+              <Link onClick={handleClick} href="/store/products/special-offers">
                 SPECIAL OFFERS
               </Link>
             </li>
             <li>
-              <Link onClick={handleClick} href="/about">
+              <Link onClick={handleClick} href="/orders">
                 ORDER STATUS
               </Link>
             </li>
             <li>
-              <Link onClick={handleClick} href="/about">
+              <Link onClick={handleClick} href="/orders/shipping/">
                 TRACK SHIPPING
               </Link>
             </li>
@@ -55,12 +60,12 @@ const MobileNavbar = ({className}: Props) => {
               </Link>
             </li>
             <li>
-              <Link onClick={handleClick} href="/about">
+              <Link onClick={handleClick} href="/help">
                 SUPPORT
               </Link>
             </li>
             <li>
-              <Link onClick={handleClick} href="/about">
+              <Link onClick={handleClick} href="/contact">
                 CONTACT US
               </Link>
             </li>

@@ -37,7 +37,7 @@
  .product-card-container {
     width: 12rem; /* Make the card take full width */
     height: 18rem; /* Adjust the height automatically */
-    margin: 0.5rem; /* Adjust the margin for smaller screens */
+    margin: 0.8rem; /* Adjust the margin for smaller screens */
  }
 
  .product-title {

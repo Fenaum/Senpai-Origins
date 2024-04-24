@@ -33,11 +33,11 @@ export default function SideBar({className}: Props) {
               <span>Shop</span>
             </Link>
             <div className="dropdown-content">
-              <Link href="/store/categories/collection">
+              <Link href="/store/products/new-arrivals">
                 <Icons.shopIcon className="w-12 h-8" />
                 <span>New Collection</span>
               </Link>
-              <Link href="/store/categories/special-offers">
+              <Link href="/store/products/special-offers">
                 <Icons.promotionShopIcon className="w-12 h-8" />
                 <span>Special Offers</span>
               </Link>

@@ -3,7 +3,7 @@ import Product from "../../../../model/Product";
 import Card from "../../../components/ui/productCard/Card";
 
 async function getProducts() {
-  const response = await fetch("http://localhost:3000/api/products/read", {
+  const response = await fetch("http://localhost:3000/api/products/get", {
     method: "GET",
   });
   return response.json();
@@ -14,7 +14,7 @@ async function page() {
     console.log(products)
     return (
       <div className="flex justify-center items-center mx-12">
-        <div className="flex justify-start items-center flex-wrap gap-6">
+        <div className="lg:flex lg:justify-start lg:items-center lg:flex-wrap lg:gap-6">
           {products.map((product: Product) => {
             return (
               <Card
