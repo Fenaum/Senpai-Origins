@@ -63,7 +63,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/user/signin">
+              <Link href="/user/">
                 <Icons.userIcon className="h-10 w-10" />
               </Link>
             </li>

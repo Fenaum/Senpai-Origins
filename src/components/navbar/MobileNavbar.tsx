@@ -81,7 +81,7 @@ const MobileNavbar = ({className}: Props) => {
           <Link href="/cart">
             <Icons.cartIcon className="w-11 h-11 m-1" />
           </Link>
-          <Link href="profile">
+          <Link href="/user/">
             <Icons.userMobileIcon className="w-10 h-10 m-1" />
           </Link>
         </div>
