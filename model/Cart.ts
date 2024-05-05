@@ -1,12 +1,10 @@
-import Product from './Product';
-
 interface Cart {
   id: string; // Unique identifier for the cart
-  userID?: string; // Optional: ID of the user associated with the cart
-  items: Product[]; // Array of items in the cart
-  totalPrice: number; // Total price of all items in the cart
-  createdAt: Date; // Date the cart was created
+  userId?: string; // Optional: ID of the user associated with the cart
+  items: { productID: string; price: number }[]; // Array of objects with productID and price
+  createdA?: Date; // Date the cart was created
   updatedAt?: Date; // Date the cart was last updated (optional)
+  totalPrice?(): number; // Function to calculate the total price of the cart
 }
 
 export default Cart;

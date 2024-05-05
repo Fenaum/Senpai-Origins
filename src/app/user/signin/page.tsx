@@ -19,7 +19,7 @@ export default function Page() {
       const user = await signInWithGoogle();
       console.log("User signed up with Google:", user);
       // Redirect to the home page or dashboard after successful sign-up
-      router.push("/user/profile");
+      router.push("/user/");
     } catch (error) {
       console.error("Error signing up with Google:", error);
       // Handle error, e.g., show an error message to the user
